@@ -1,4 +1,6 @@
-
+SCCACHE_DIR: ${{ matrix.sccache-path }}
+      # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
     env:
   paths-ignore:
         - 'docs/**'
