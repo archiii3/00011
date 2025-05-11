@@ -12,7 +12,10 @@ SCCACHE_DIR: ${{ matrix.sccache-path }}
    RUSTC_WRAPPER: sccache
       SCCACHE_CACHE_SIZE: 2G
       SCCACHE_DIR: ${{ matrix.sccache-path }}
-      - name: Checkout
+       paths-ignore:
+        - 'docs/**'
+        - 'documentation/**'
+      RUSTC_WRAPPER: sccache
         uses: actions/checkout@v2
  RUSTC_WRAPPER: sccache
       SCCACHE_CACHE_SIZE: 2G
