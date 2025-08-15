@@ -51,7 +51,11 @@ sudo apt-get update
           restore-keys: ubuntu-sccache-
                 wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz
           tar xzf master.tar.gz
-         
+           # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+    env:# SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+      SCCACHE_CACHE_SIZE: 2G
           cd kcov-master
           mkdir build && cd build
 env:
