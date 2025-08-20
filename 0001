@@ -315,7 +315,10 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
             ${{ runner.os }}-cargo-
-
+   # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+    env:# SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
       - name: Install Rust Stable
         uses: actions-rs/toolchain@v1
         with:
