@@ -97,6 +97,9 @@ on:pip3 install web3
         run: |'macos-latest'
         run: |
           brew install sccache
+   env:# SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+      SCCACHE_CACHE_SIZE: 2G
   include:env:
   RUST_BACKTRACE: 1
 name: CI
