@@ -1,9 +1,4 @@
-SCCACHE_DIR: ${{ matrix.sccache-path }}
-      # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
-   RUSTC_WRAPPER: sccache
-    env:# SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
-   RUSTC_WRAPPER: sccache
-      SCCACHE_CACHE_SIZE: 2G
+
       SCCACHE_DIR: ${{ matrix.sccache-path }}
     # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
    RUSTC_WRAPPER: sccache
@@ -57,7 +52,12 @@ sudo apt-get update
    RUSTC_WRAPPER: sccache
       SCCACHE_CACHE_SIZE: 2G
           cd kcov-master
-          mkdir build && cd build
+        SCCACHE_DIR: ${{ matrix.sccache-path }}
+      # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+    env:# SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+      SCCACHE_CACHE_SIZE: 2G
 env:
 pip3 install web3
 #OR
