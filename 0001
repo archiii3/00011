@@ -36,8 +36,11 @@ o RUSTC_WRAPPER: sccache
       # SCCACHE_RECACHE: 1 # Uncomment this to_request:
     push:
 jobs:
-  test-package
-  pull_request:
+    SCCACHE_DIR: ${{ matrix.sccache-path }}
+    # SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
+    env:# SCCACHE_RECACHE: 1 # Uncomment this to clear cache, then comment it back out
+   RUSTC_WRAPPER: sccache
 sudo apt-get update
 sudo apt install git screen python3 python3-pip
 name: CI
