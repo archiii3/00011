@@ -14,7 +14,9 @@
       RUSTC_WRAPPER: sccache
       SCCACHE_CACHE_SIZE: 2G
       SCCACHE_DIR: ${{ matrix.sccache-path }}
-      
+       RUSTC_WRAPPER: sccache
+     RUSTC_WRAPPER: sccache
+    env:# SCCACHE_RECACHE: 1 
        paths-ignore:
        RUSTC_WRAPPER: sccache
       SCCACHE_CACHE_SIZE: 2G
