@@ -66,3 +66,6 @@ def main(message: str) -> None:
 
 if __name__ == "__main__":
     main()
+# package marker
+#!/usr/bin/env python3
+"""Simple CLI example"""
